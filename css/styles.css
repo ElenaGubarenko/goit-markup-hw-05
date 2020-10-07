@@ -8,7 +8,7 @@ color: var(--xxx-text-color)
 line-height = (line-height / font-size);
 
 
-.hero : почему при указании размеров (ширина высота) все сбивается? 
+--transition-color: transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 */
 
 :root {
@@ -22,6 +22,7 @@ line-height = (line-height / font-size);
   --background-advantages: #f5f4fa;
   --border-clients: #afb1b8;
   --background-our-works: rgba(47, 48, 58, 0.8);
+  --background-portfolio-cards: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -118,8 +119,16 @@ body {
   margin-right: 52px;
 }
 
+.nav-link {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .nav-link:hover,
 .nav-link:focus {
+  transform: color;
+
   color: var(--blue-color);
 }
 
@@ -138,8 +147,16 @@ body {
   margin-right: 51px;
 }
 
+.contact-nav {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .contact-nav:hover .icon-grey,
 .contact-nav:focus .icon-grey {
+  transform: fill;
+
   fill: var(--blue-color);
 }
 
@@ -162,10 +179,16 @@ body {
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover,
 .contact-link:focus {
+  transform: color;
+
   color: var(--blue-color);
 }
 
@@ -301,6 +324,10 @@ body {
   letter-spacing: 0.03em;
 }
 
+.our-work-image {
+  display: block;
+}
+
 .our-work-title {
   margin-top: 0;
   margin-bottom: 59px;
@@ -402,12 +429,20 @@ body {
   align-items: center;
   justify-content: center;
   fill: var(--main-text-color);
-  width: 44px;
-  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+  /* width: 44px;
+  height: 44px; */
+
+  transition-property: color, fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
 .social-link:focus {
+  transform: color, fill, background-color;
+
   background-color: var(--blue-color);
   fill: var(--white-color);
   border-radius: 50%;
@@ -442,10 +477,16 @@ body {
   justify-content: center;
   border: 1px solid var(--border-clients);
   border-radius: 4px;
+
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients:hover,
 .clients:focus {
+  transform: border, fill;
+
   border: 1px solid var(--blue-color);
   fill: var(--blue-color);
 }
@@ -518,6 +559,10 @@ body {
 }
 
 .social-link-footer {
+  padding: 12px;
+}
+
+.social-link-footer {
   fill: var(--white-color);
 }
 
@@ -529,6 +574,10 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
   width: 44px;
   height: 44px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-item-footer:not(:last-child) {
@@ -537,6 +586,8 @@ body {
 
 .social-item-footer:hover,
 .social-item-footer:focus {
+  transform: background-color;
+
   background-color: var(--blue-color);
 }
 
@@ -588,8 +639,17 @@ body {
   margin-right: 8px;
 }
 
+.categories-button {
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .categories-button:hover,
 .categories-button:focus {
+  transform: color, background-color;
+
+  cursor: pointer;
   color: var(--white-color);
   background-color: var(--blue-color);
 }
@@ -633,10 +693,17 @@ body {
   margin-right: 30px;
   margin-bottom: 30px;
   outline: 1px solid var(--border-card);
+
+  transition-property: box-sizing, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .example-card:focus,
 .example-card:hover {
+  transform: box-sizing, box-shadow;
+
+  cursor: pointer;
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -647,4 +714,53 @@ body {
 
 .example-card:nth-last-child(-n + 3) {
   margin-bottom: 0;
+}
+
+.texnokryak {
+  text-align: left;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+  margin: 0;
+}
+
+.portfolio-cards {
+  display: block;
+}
+
+.portfolio-background-text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  bottom: -100%;
+  background-color: var(--background-portfolio-cards);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay:hover .for-overlay,
+.overlay:focus .for-overlay {
+  overflow: visible;
+
+  transform: translateY(-100%);
+}
+
+.for-overlay {
+  transition-property: translateY;
+  transition-duration: 2500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
 }
