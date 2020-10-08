@@ -741,6 +741,12 @@ body {
   padding: 63px 24px;
   bottom: -100%;
   background-color: var(--background-portfolio-cards);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  transform: translateY(0);
 }
 
 .overlay {
@@ -748,19 +754,29 @@ body {
   height: 100%;
 }
 
-.overlay:hover .for-overlay,
-.overlay:focus .for-overlay {
+.overlay:hover .portfolio-background-text,
+.overlay:focus .portfolio-background-text {
   overflow: visible;
-
   transform: translateY(-100%);
 }
 
 .for-overlay {
-  transition-property: translateY;
-  transition-duration: 2500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  transform: translateY(0);
   position: relative;
   overflow: hidden;
+}
+
+/* TEST */
+
+.test-text {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 0, 0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.img-and-text {
+  position: relative;
+  width: 300px;
+  height: 300px;
 }
