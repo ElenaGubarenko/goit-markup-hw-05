@@ -1,0 +1,45 @@
+/* TEST */
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
+.test-text {
+  position: absolute;
+  bottom: -100%;
+  background-color: rgba(255, 255, 0, 0.5);
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+
+  transform: translateY(0);
+
+  transition-property: transform;
+  transition-duration: 2500ms;
+}
+
+.img-and-text {
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.li-test:hover .test-text,
+.li-test:focus .test-text {
+  transform: translateY(-100%);
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  padding: 0;
+  background-image: url(./images-optimized/astronaut1.svg);
+  border-radius: 50%;
+}
